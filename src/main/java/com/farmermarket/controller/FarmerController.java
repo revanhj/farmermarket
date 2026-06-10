@@ -11,12 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class FarmerController {
 
-	
-	/**
-	 * Get Farmer By Id
-	 */
 	@GetMapping("/farmers")
-	public ResponseEntity<String> getFarmerById() {
+	public ResponseEntity<String> getFarmer() {
 
 		String farmerResponse = "Farmer";
 		return ResponseEntity.ok(farmerResponse);
