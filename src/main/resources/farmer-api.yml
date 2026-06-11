@@ -1,0 +1,146 @@
+openapi: 3.0.1
+
+info:
+  title: Farmer API
+  version: 1.0.0
+
+paths:
+
+  /api/v1/farmers/register:
+
+    post:
+      summary: Register Farmer
+
+      operationId: registerFarmer
+
+      requestBody:
+        required: true
+
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterFarmerRequest'
+
+      responses:
+        '201':
+          description: Farmer Registered
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmerResponse'
+
+  /api/v1/farmers/login:
+
+    post:
+      summary: Farmer Login
+
+      operationId: loginFarmer
+
+      requestBody:
+        required: true
+
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+
+      responses:
+        '200':
+          description: Login Successful
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+
+components:
+
+  schemas:
+
+    RegisterFarmerRequest:
+
+      type: object
+
+      required:
+        - farmerName
+        - mobileNumber
+        - password
+
+      properties:
+
+        farmerName:
+          type: string
+
+        mobileNumber:
+          type: string
+
+        email:
+          type: string
+
+        village:
+          type: string
+
+        district:
+          type: string
+
+        state:
+          type: string
+
+        password:
+          type: string
+
+    LoginRequest:
+
+      type: object
+
+      required:
+        - mobileNumber
+        - password
+
+      properties:
+
+        mobileNumber:
+          type: string
+
+        password:
+          type: string
+
+    FarmerResponse:
+
+      type: object
+
+      properties:
+
+        farmerId:
+          type: integer
+
+        farmerName:
+          type: string
+
+        mobileNumber:
+          type: string
+
+        village:
+          type: string
+
+        district:
+          type: string
+
+        state:
+          type: string
+
+    LoginResponse:
+
+      type: object
+
+      properties:
+
+        success:
+          type: boolean
+
+        message:
+          type: string
+
+        farmerId:
+          type: integer
