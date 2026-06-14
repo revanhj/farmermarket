@@ -35,7 +35,7 @@ paths:
     post:
       summary: Farmer Login
 
-      operationId: loginFarmer
+      operationId: login
 
       requestBody:
         required: true
