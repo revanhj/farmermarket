@@ -16,7 +16,7 @@ public class Farmer implements DefaultApi{
 	@Override
 	public ResponseEntity<LoginResponse> login(@Valid LoginRequest loginRequest) {
 		
-		return DefaultApi.super.login(loginRequest);
+		return null;
 	}
 
 	@Override
