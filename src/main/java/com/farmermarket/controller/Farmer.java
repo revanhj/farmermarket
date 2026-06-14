@@ -15,14 +15,14 @@ public class Farmer implements DefaultApi{
 
 	@Override
 	public ResponseEntity<LoginResponse> login(@Valid LoginRequest loginRequest) {
-		
+		// TODO Auto-generated method stub
 		return DefaultApi.super.login(loginRequest);
 	}
 
 	@Override
 	public ResponseEntity<FarmerResponse> registerFarmer(@Valid RegisterFarmerRequest registerFarmerRequest) {
 		// TODO Auto-generated method stub
-		return DefaultApi.super.registerFarmer(registerFarmerRequest);
+		return null;
 	}
 	
 }
